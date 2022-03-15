@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+  <title>我的简历</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #eee;
+      margin: 20px 0;
+    }
+
+    article {
+      width: 21cm;
+      min-height: 29.7cm;
+      background: white;
+      margin: 0 auto;
+      overflow: auto;
+      padding: 1em;
+    }
+  </style>
+  <style media="print">
+    body {
+      margin: 0;
+    }
+
+    .page2 {
+      page-break-before: always;
+      margin-top: 30px;
+    }
+  </style>
+  <style>
+    body {}
+
+    p {
+    }
+
+    h1 {
+      font-size: 25px;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      margin: 12px 0 5px;
+    }
+
+    h3 {
+      color: #000000;
+    }
+
+    h4,
+    h5,
+    h6 {
+      font-weight: normal;
+    }
+
+    ol,
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    strong {
+      font-weight: normal;
+      color: #007576;
+    }
+
+    a {
+      color: #999;
+      text-decoration: none;
+      border-bottom: 1px solid;
+    }
+
+    p,
+    li {
+      margin: .1em 0;
+      color: #666;
+    }
+
+    strong {
+      font-weight: normal;
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+    }
+
+    .bio {
+      position: relative;
+    }
+
+    .bio img {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .qrCodeWrapper{
+      position: relative;
+    }
+    .qrCode{
+      width: 7em;
+      position:absolute;
+      right: 1em;
+    }
+
+  </style>
+
+  <style>
+    .projects {}
+
+    .projects-job {
+      font-size: 18px;
+      margin: 0 10px;
+    }
+
+    .projects-job-title {
+      font-size: 18px;
+      margin: 0 10px 0 0;
+    }
+
+    .projects p {
+      color: #666;
+    }
+
+    strong {
+      font-weight: bolder;
+    }
+
+    .projects strong {
+      color: #007576;
+    }
+
+    .projects>ol {
+      margin-top: 0;
+      list-style-position: inside;
+      padding: 0;
+    }
+
+    .projects>ol>li {
+      margin-bottom: 20px;
+    }
+
+    .projects>ol>li>header {
+      display: flex;
+      /* justify-content: space-between; */
+      align-items: center;
+    }
+
+    .projects>ol>li h3 {
+      margin-right: 10px;
+      display: inline-block;
+    }
+
+    .project-item {
+      margin: 6px 0 6px;
+    }
+
+    .project-item>.project-item-title {
+      margin: 0px 0 5px;
+      font-size: 17px;
+    }
+
+    .project-item-descrip {
+      margin-left: 21px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-item-descrip>li {
+      margin-bottom: 5px;
+    }
+  </style>
+  <style>
+    .skills {}
+
+    #skills {
+      width: 500px;
+      height: 270px;
+    }
+
+    @media print {
+      #skills {
+        display: none;
+      }
+    }
+
+    .skills>.wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .skills>.wrapper> :first-child {
+      margin-right: 24px;
+    }
+
+    .skills>.wrapper>#skills {}
+
+    .skills>.wrapper>ul {
+      color: #666;
+    }
+
+    .skills>.wrapper strong {
+      color: #007576;
+    }
+
+    .skills>.wrapper>ul>li {
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+  </style>
+  <style>
+    .openSource {}
+
+    .openSource>h3 {}
+
+    .openSource header img {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .openSource>ul {}
+
+    .openSource>ul>li {
+      margin-bottom: 20px;
+    }
+
+    .openSource header {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .openSource h3 {}
+  </style>
+  <style>
+    .jobs {}
+
+    .jobs>h2 {}
+
+    .jobs>ol {}
+
+    .jobs>ol>li {
+      margin: 12px 0;
+    }
+
+    .jobs header {
+      display: flex;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    .jobs header>h3 {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .jobs header>h4 {
+      margin-left: 1em;
+      font-size: 18px;
+    }
+
+    .jobs header>span {
+      font-size: 18px;
+      margin-left: auto;
+    }
+  </style>
+
+  <style>
+    @media (max-width: 500px) {
+      body {
+        margin: 0;
+      }
+
+      article {
+        width: auto;
+        height: auto;
+      }
+
+      .bio img {
+        display: none;
+      }
+
+      .skills .wrapper {
+        flex-direction: column;
+      }
+
+      #skills {
+        width: auto;
+      }
+
+      .jobs header {
+        flex-direction: column;
+      }
+
+      .jobs header>h3,
+      .jobs header>h4,
+      .jobs header>span {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <article>
+    <section class="bio">
+      <h1>郑康</h1>
+      <!-- <img
+          src="./images/zhaopian.jpg"
+          alt=""
+          width="130"
+          height="130"
+        /> -->
+      <p>男 | 23岁 | 前端开发工程师 | 无工作经验 | 北京 | 软件工程 | 本科 </p>
+      <p>手机：15759211192 | 微信：lennonJh | 邮箱：1099571219@qq.com</p>
+      <section class="others">
+        <p>
+          <a href="https://www.yuque.com/lucas-l8swr/ftmqe3" target="_blank">我的博客</a>
+          ，目前已有
+          <strong>44</strong>
+          篇技术文章
+        </p>
+      </section>
+    </section>
+
+    <section class="skills">
+      <h2>技能</h2>
+      <div class="wrapper">
+        <ul>
+          <li>
+            能够使用
+            <strong>HTML5</strong>
+            和
+            <strong>CSS3</strong>
+            进行符合 Web 标准的语义化开发，具有像素级还原设计稿的能力
+          </li>
+          <li>
+            了解原生 JS，了解
+            <strong>ES6 常用特性，</strong>
+            了解
+            <strong>TypeScript</strong>
+            的使用
+          </li>
+          <li>
+            了解
+            <strong>前后端分离</strong>
+            技术，包括 AJAX、跨域、前端路由、Cookie、Session 等
+          </li>
+          <li>
+            了解
+            <strong>Vue 全家桶</strong>
+            的使用，包括 VueCli、VueRouter、Vuex 等
+          </li>
+          <!-- <li>了解 React 全家桶的使用，包括 create-react-app、ReactRouter、Redux 等</li> -->
+        </ul>
+      </div>
+    </section>
+    <section class="openSource">
+      <h2>项目经历</h2>
+      <ul>
+        <li class="qrCodeWrapper">
+          <header>
+            <h3 >小柴记账</h3>
+            <span>
+              <a href="https://github.com/1099571219/save" target="_blank">源码链接</a>
+              <a href="#" style="border: none">扫码预览</a>
+            </span>
+          </header>
+          <p >
+            一个基于
+            <strong>Vue</strong>
+            /
+            <strong>VueRouter</strong>
+            /
+            <strong>Vuex</strong>
+            /
+            <strong>TypeScript</strong>
+            的移动端单页面应用
+            <img class="qrCode" src="./qrcode.png" alt="">
+          </p>
+          <p>
+            该项目
+            <strong>实现了记账、标签管理、数据统计等功能</strong>
+          </p>
+          <p>
+            <strong>关于该项目的思路、实现、遇到的问题，我对此做了2篇的博客</strong>
+            <span>
+              <a href="https://www.yuque.com/lucas-l8swr/ftmqe3/hzgdkr" target="_blank">
+                总结链接
+              </a>
+            </span>
+          </p>
+          <p>
+            完成该项目使我对 <strong>Vue</strong> 的常用特征更加熟悉，同时了解到了 <strong>前端工程化流程的重要性</strong>
+          </p>
+        </li>
+        <li>
+          <header>
+            <h3>Zcore UI</h3>
+            <span>
+              <a href="https://github.com/1099571219/newgu" target="_blank">源码链接</a>
+              <a href="https://1099571219.github.io/zcore-ui-website/index.html#/" target="_blank">项目预览</a>
+            </span>
+          </header>
+          <p>
+            一款基于
+            <strong>Vue3</strong>
+            /
+            <strong>Vue-Router</strong>
+            /
+            <strong>TypeScript</strong>
+            /
+            <span>Marked</span>
+            /
+            <span>SCSS</span>
+            的
+            <strong>UI 框架</strong>
+          </p>
+          <p>
+            提供了⼀些基础组件如 Button、Card、Input、Popover、Toast、Switch 等
+            
+          </p>
+          <p>
+            最终以 Marked 为基础制作官⽅⽂档,发布于 npmjs.org
+          </p>
+          <p>
+            完成该项目使我初步的走进了 Vue3 ，了解 Vue3 与 Vue2 的区别
+          </p>
+        </li>
+        <li>
+          <header>
+            <h3>金博金客</h3>
+            <span>
+              <a href="https://github.com/1099571219/blog" target="_blank">源码链接</a>
+              <a href="https://1099571219.github.io/blog-website/#/" target="_blank">项目预览</a>
+            </span>
+          </header>
+          <p>
+            一款基于
+            <strong>Vue</strong>
+            /
+            <strong>Vue-Router</strong>
+            /
+            <strong>Vuex</strong>
+            /
+            <strong>axios</strong>
+            /
+            <span>Less</span>
+            /
+            <span>ElementUI</span>
+            /
+            <span>Markdown</span>
+            制作的
+          </p>
+          <p>
+            多人博客共享⽹站，博客内容最终以 Markdown 进行渲染
+          </p>
+          <p>
+            该项⽬实现 登录/注册，发布/删除/编辑，博客列表展示，查看博客等功能
+          </p>
+          <p>
+            完成该项目使我了解前后端联调，对收发请求有了更进一步的理解
+          </p>
+        </li>
+      </ul>
+      <h2>开源项目</h2>
+      <ul>
+        <li>
+          <header>
+            <h3>手写简易版 jQuery</h3>
+            <span>
+              <a href="https://github.com/1099571219/jQuery" target="_blank">源码链接</a>
+            </span>
+          </header>
+          <p>
+            我写了篇博客介绍 <a href="https://www.yuque.com/lucas-l8swr/ftmqe3/op3qo7" target="_blank" >手写简易 jQuery</a> 的一些总结
+          </p>
+        </li>
+        
+        <li>
+          <header>
+            <h3>启航-导航</h3>
+            <span>
+              <a href="https://github.com/1099571219/QiHang" target="_blank">源码链接</a>
+              <a href="https://1099571219.github.io/QiHang/src/index.html" target="_blank">项目预览</a>
+            </span>
+          </header>
+          <p>
+            使用 JQuery / CSS3 制作的简约导航网站
+          </p>
+          <p>
+            为了满足自己的日常需求所开发的简约导航网站
+          </p>
+          <p>
+            该项目实现 添加/删除 导航标签，存储至 LocalStorage ，响应式布局
+          </p>
+        </li>
+        <li>
+          <header>
+            <h3>画皮卡丘</h3>
+            <span>
+              <a href="https://github.com/1099571219/pikachu-demo" target="_blank">源码链接</a>
+              <a href="https://1099571219.github.io/pikachu-demo/" target="_blank">项目预览</a>
+            </span>
+          </header>
+          <p>
+            使用 JQuery | CSS3 画一只皮卡丘
+          </p>
+        </li>
+      </ul>
+
+    </section>
+
+
+    <section class="education">
+      <h2>教育经历</h2>
+      <p>
+        <span>
+          <time>2017年</time>
+          ~
+          <time>2021年</time>
+        </span>
+        厦门理工学院 软件工程 统招本科
+      </p>
+    </section>
+  </article>
+</body>
+
+</html>
